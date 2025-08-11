@@ -76,3 +76,16 @@ Predictions for Missing End Dates:
 * Improve feature engineering for temporal data.
 * Try boosting-based models (e.g., XGBoost, LightGBM) for better performance.
 * Incorporate external datasets (e.g., weather, regional workload) to enrich predictions.
+
+## Data Source & License
+This project uses a roadworks dataset from the Central Bureau of Statistics (Israel).
+Data use is permitted under the CBS terms. Raw data is **not redistributed** in this repo.
+If you have access to the dataset, place it at `data/roadworks_cbs_israel.xlsx`.
+Otherwise, use the provided synthetic sample in `examples/`.
+
+Attribution: © Central Bureau of Statistics, Israel. All rights reserved by the respective owner.
+
+## Ethical Use & Limitations
+Predictions are estimates with a non-trivial error margin and can be wrong for specific projects.
+They should not be used as the sole basis for operational, legal, or financial decisions.
+The model currently serves research/illustrative purposes and is under active improvement.
