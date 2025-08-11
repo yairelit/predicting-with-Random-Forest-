@@ -43,8 +43,8 @@ Ongoing work is being done to improve accuracy by:
 - numpy
 - matplotlib
 - scikit-learn
-- Python 3.8+
-- Libraries:  
+- openpyxl
+- xlrd  
 
 
 ## Running the Project
