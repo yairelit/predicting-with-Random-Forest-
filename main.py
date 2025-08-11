@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 # === CONFIGURATION ===
-FILE_PATH = r"C:\Users\yair\Downloads\Copy of Copy of כבישים גמרים_14Mar_1428_14Mar_1428 (1).xls"
+FILE_PATH = r"./data/roadworks_cbs.xls"
 TOP_FEATURES = 100
 RANDOM_SEED = 42
 
@@ -98,12 +98,19 @@ def train_model(X_train, y_train):
     return model
 
 def evaluate_model(model, X_val, y_val):
-    """Evaluate model and print performance metrics."""
     y_pred = model.predict(X_val)
+    mae = mean_absolute_error(y_val, y_pred)
+    # נסה API חדש, אחרת fallback
+    try:
+        rmse = mean_squared_error(y_val, y_pred, squared=False)
+    except TypeError:
+        rmse = np.sqrt(mean_squared_error(y_val, y_pred))
+    r2 = r2_score(y_val, y_pred)
+
     print("Validation Metrics:")
-    print(f"MAE:  {mean_absolute_error(y_val, y_pred):.2f}")
-    print(f"RMSE: {mean_squared_error(y_val, y_pred, squared=False):.2f}")
-    print(f"R²:   {r2_score(y_val, y_pred):.2f}")
+    print(f"MAE:  {mae:.2f}")
+    print(f"RMSE: {rmse:.2f}")
+    print(f"R²:   {r2:.2f}")
     return y_pred
 
 def plot_feature_importance(model, X, top_n=TOP_FEATURES):
