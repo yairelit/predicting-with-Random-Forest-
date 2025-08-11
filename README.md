@@ -53,9 +53,7 @@ Ongoing work is being done to improve accuracy by:
 3. Run:
  ```bash
  python main.py
-
-
-
+```
 4. The script will:
 * Train the model.
 * Evaluate its performance.
@@ -72,9 +70,7 @@ Predictions for Missing End Dates:
    predicted gap  predicted end year  predicted end month
 0     320.123456                2020                    4
 1     185.987654                2019                    9
-...
-
-
+```
 
 ## Next Steps
 * Improve feature engineering for temporal data.
