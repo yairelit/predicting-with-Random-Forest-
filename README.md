@@ -38,7 +38,8 @@ Ongoing work is being done to improve accuracy by:
 
 ## Requirements
 - Python 3.8+
-- Libraries:  
+  
+Libraries:  
 - pandas
 - numpy
 - matplotlib
